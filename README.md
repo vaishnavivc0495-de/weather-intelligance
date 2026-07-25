@@ -5,110 +5,19 @@
 ![Deploy](https://img.shields.io/badge/deploy-Cloudflare%20Pages-orange)
 ![API](https://img.shields.io/badge/api-Open--Meteo-blue)
 
-A production-style weather intelligence application built with React, Vite, and Open-Meteo APIs. The app lets users search cities, view current weather, inspect 7-day forecast trends, and receive practical planning recommendations.
+A weather intelligence web app built with React, Vite, and Open-Meteo APIs. Users can search cities, view current conditions, browse a 7-day forecast, and receive practical weather recommendations.
 
-## Table of Contents
+## What’s included
 
-- Overview
-- Architecture
-- Features
-- Tech Stack
-- Project Structure
-- API Design
-- Recommendation Rules
-- Setup and Run
-- Deployment
-- Security Notes
-- QA and Validation
-- Submission Evidence Checklist
-- License
-
-## Overview
-
-### Problem Statement
-Users need quick and clear weather insights for daily planning, but many weather tools are cluttered, key-gated, or not assignment-friendly.
-
-### Solution
-This project provides:
-- Fast city-based search
-- Current weather overview
+- City search with geocoding
+- Current weather details
 - 7-day forecast cards
-- Rule-driven recommendations
-- Friendly invalid city and network error states
-
-### Target Users
-- Learners completing app deployment assignments
-- Users planning daily activities using weather conditions
-- Recruiters evaluating frontend + API + deployment skills
-
-## Architecture
-
-The app uses a React SPA frontend and a lightweight API adapter for weather data.
-
-### Runtime Modes
-- Local: Vite development server with Express middleware
-- Cloud: Cloudflare Pages deployment with serverless function support
-
-## Features
-
-- City search
-- Current weather details (temperature, condition, wind, humidity, pressure, sunrise/sunset)
-- 7-day forecast cards
-- Recommendation cards based on weather values
+- Weather-based recommendation cards
 - Invalid city handling
-- Network failure handling
-- Responsive layout
+- Network error handling
+- Responsive UI for desktop and mobile
 
-## Tech Stack
-
-- React 18
-- Vite
-- Tailwind CSS
-- Lucide React icons
-- Express 5 for local API integration
-- Cloudflare Pages Functions for deployment
-- Open-Meteo APIs for geocoding and forecasts
-
-## Project Structure
-
-`	ext
-weather-intelligence/
-├─ client/
-│  ├─ components/ui/
-│  ├─ hooks/
-│  ├─ lib/
-│  ├─ pages/
-│  ├─ App.jsx
-│  └─ global.css
-├─ functions/api/weather.js
-├─ server/
-│  ├─ routes/
-│  └─ index.js
-├─ public/
-├─ package.json
-├─ README.md
-├─ vite.config.js
-└─ tailwind.config.js
-`
-
-## API Design
-
-### Main endpoint
-
-`http
-GET /api/weather?city=<city-name>
-`
-
-### Expected behavior
-- Resolve city name to coordinates
-- Request current and daily weather data
-- Return normalized JSON
-
-## Setup and Run
-
-### Prerequisites
-- Node.js 20 or newer
-- npm 10 or newer
+## Quick start
 
 ### Install
 
@@ -124,36 +33,59 @@ npm install
 npm run dev
 `
 
-### Build for production
+Open the app at:
+
+- http://localhost:8080
+
+### Production build
 
 `ash
 npm run build
 `
 
+### Optional local production server
+
+`ash
+npm run build:server
+npm run start
+`
+
+## Project layout
+
+- client/ — React frontend pages and UI components
+- unctions/api/weather.js — serverless weather API adapter
+- server/ — Express API for local development
+- public/ — static assets
+- package.json — project scripts and dependencies
+- README.md — project documentation
+
+## API endpoint
+
+`http
+GET /api/weather?city=<city-name>
+`
+
+The API resolves the city name, fetches forecast data from Open-Meteo, and returns a normalized JSON response.
+
 ## Deployment
 
-Deploy the app to Cloudflare Pages or another static hosting provider with serverless function support.
+This project is designed for Cloudflare Pages deployment with serverless function support. Use 
+pm run build and point the deployment to the dist/ output.
 
-## Security Notes
+## Notes
 
-- No private API keys are required for this project
+- No private API keys are required
 - Local secret files are excluded from git tracking
+- The current GitHub repository is weather-intelligance
 
-## QA and Validation
+## Validation
 
-Verify the app by searching for:
+Try these searches in the app:
+
 - Chennai
 - Bangalore
 - InvalidCity987654
 
-## Submission Evidence Checklist
-
-Capture screenshots of:
-1. GitHub repository home page
-2. README rendered on GitHub
-3. Cloudflare build configuration
-4. Deployed site working in browser
-
 ## License
 
-Add a license file for clarity, for example MIT.
+Add a LICENSE file if you want to publish this project as open source.
