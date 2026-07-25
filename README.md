@@ -5,7 +5,7 @@
 ![Deploy](https://img.shields.io/badge/deploy-Cloudflare%20Pages-orange)
 ![API](https://img.shields.io/badge/api-Open--Meteo-blue)
 
-A weather intelligence web app built with React, Vite, and Open-Meteo APIs. Users can search cities, view current conditions, browse a 7-day forecast, and receive practical weather recommendations.
+A weather intelligence web application built with React, Vite, and Open-Meteo APIs. Users can search for cities, view current weather conditions, browse a 7-day forecast, and receive practical weather recommendations.
 
 ## What’s included
 
@@ -15,9 +15,9 @@ A weather intelligence web app built with React, Vite, and Open-Meteo APIs. User
 - Weather-based recommendation cards
 - Invalid city handling
 - Network error handling
-- Responsive UI for desktop and mobile
+- Responsive layout for desktop and mobile
 
-## Quick start
+## Quick Start
 
 ### Install
 
@@ -37,7 +37,7 @@ Open the app at:
 
 - http://localhost:8080
 
-### Production build
+### Build for production
 
 `ash
 npm run build
@@ -50,7 +50,7 @@ npm run build:server
 npm run start
 `
 
-## Project layout
+## Project Layout
 
 - client/ — React frontend pages and UI components
 - unctions/api/weather.js — serverless weather API adapter
@@ -59,7 +59,7 @@ npm run start
 - package.json — project scripts and dependencies
 - README.md — project documentation
 
-## API endpoint
+## API Endpoint
 
 `http
 GET /api/weather?city=<city-name>
@@ -69,14 +69,14 @@ The API resolves the city name, fetches forecast data from Open-Meteo, and retur
 
 ## Deployment
 
-This project is designed for Cloudflare Pages deployment with serverless function support. Use 
-pm run build and point the deployment to the dist/ output.
+This project is suitable for Cloudflare Pages deployment or another static hosting provider that supports serverless functions. Use 
+pm run build and deploy the dist/ output.
 
 ## Notes
 
 - No private API keys are required
 - Local secret files are excluded from git tracking
-- The current GitHub repository is weather-intelligance
+- The current GitHub repository URL is https://github.com/vaishnavivc0495-de/weather-intelligance
 
 ## Validation
 
