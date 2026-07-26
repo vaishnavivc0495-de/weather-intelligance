@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { createServer } from "./server/index.js";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -16,7 +18,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
   },
-  plugins: [react(), expressPlugin()],
+  plugins: [react(), expressPlugin(), cloudflare()],
   resolve: {
     alias: {
       "@": path.resolve("./client"),
