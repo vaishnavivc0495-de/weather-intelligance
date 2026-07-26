@@ -95,6 +95,12 @@ function dateLabel(dateValue) {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+function formatTime(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "--:--";
+  return date.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
+}
+
 async function fetchGeocoding(city) {
   const normalizedQuery = city.toLowerCase();
   const aliases = {
